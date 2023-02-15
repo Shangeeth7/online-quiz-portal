@@ -22,5 +22,14 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.4",
     "nodemon": "^2.0.20"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shangeeth7/online-quiz-portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shangeeth7/online-quiz-portal/issues"
+  },
+  "homepage": "https://github.com/Shangeeth7/online-quiz-portal#readme"
 }
