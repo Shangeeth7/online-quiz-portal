@@ -1,0 +1,28 @@
+.after-login-title {
+  color: #8b4513 !important;
+}
+
+.buttonn {
+  background: #8b4513;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 37px;
+  max-width: 340px;
+  font-size: medium;
+}
+
+.secondd-word {
+  color: #8b4513;
+}
+
+.header,
+.sidebar {
+  background-color: #cb9e4b !important;
+}
+
+.icon-colorrr {
+  color: #8b4513;
+}

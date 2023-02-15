@@ -1,0 +1,29 @@
+:root {
+  --primary: #0f3460;
+  --secondary: #ff5722;
+  --success: #6fbf71;
+  --info: #00bcd4;
+  --warning: #e47943;
+  --danger: #f44336;
+  --light: #f1f1f1;
+  --dark: #212121;
+}
+
+.bg-primary {
+  background-size: cover;
+  background-image: url("../../public/images/log-reg1.jpg");
+}
+.bg-white {
+  background-color: transparent !important;
+}
+.text-white {
+  color: white !important;
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+
+.bg-error {
+  background-color: var(--warning);
+}
