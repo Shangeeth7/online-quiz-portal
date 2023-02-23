@@ -9,8 +9,8 @@ function AddEditQuestion({
   setShowAddEditQuestionModal,
   refreshData,
   examId,
-    selectedQuestion,
-    setSelectedQuestion
+  selectedQuestion,
+  setSelectedQuestion,
 }) {
   const dispatch = useDispatch();
   const onFinish = async (values) => {
@@ -28,16 +28,15 @@ function AddEditQuestion({
         exam: examId,
       };
 
-      let response
-        if(selectedQuestion){
-            response = await editQuestionById({
-                ...requiredPayload,
-                questionId: selectedQuestion._id
-            })
-        }
-        else{
-            response = await addQuestionToExam(requiredPayload);
-        }
+      let response;
+      if (selectedQuestion) {
+        response = await editQuestionById({
+          ...requiredPayload,
+          questionId: selectedQuestion._id,
+        });
+      } else {
+        response = await addQuestionToExam(requiredPayload);
+      }
       if (response.success) {
         message.success(response.message);
         refreshData();
@@ -45,7 +44,7 @@ function AddEditQuestion({
       } else {
         message.error(response.message);
       }
-      setSelectedQuestion(null)
+      setSelectedQuestion(null);
       dispatch(HideLoading());
     } catch (error) {
       dispatch(HideLoading());
@@ -59,24 +58,26 @@ function AddEditQuestion({
       visible={showAddEditQuestionModal}
       footer={false}
       onCancel={() => {
-        setShowAddEditQuestionModal(false)
-        setSelectedQuestion(null)
+        setShowAddEditQuestionModal(false);
+        setSelectedQuestion(null);
       }}
     >
-      <Form onFinish={onFinish} layout="vertical"
+      <Form
+        onFinish={onFinish}
+        layout="vertical"
         initialValues={{
-            name: selectedQuestion?.name,
-            A: selectedQuestion?.options?.A,
-            B: selectedQuestion?.options?.B,
-            C: selectedQuestion?.options?.C,
-            D: selectedQuestion?.options?.D,
-            correctOption: selectedQuestion?.correctOption,
+          name: selectedQuestion?.name,
+          A: selectedQuestion?.options?.A,
+          B: selectedQuestion?.options?.B,
+          C: selectedQuestion?.options?.C,
+          D: selectedQuestion?.options?.D,
+          correctOption: selectedQuestion?.correctOption,
         }}
       >
         <Form.Item name="name" label="Question">
           <input type="text" />
         </Form.Item>
-        <Form.Item name="correctOption" label="Correct Option">
+        <Form.Item name="correctOption" label="Correct Option (Like A or B )">
           <input type="text" />
         </Form.Item>
 

@@ -78,7 +78,7 @@ function AddEditExam() {
       dispatch(ShowLoading());
       const response = await deleteQuestionById({
         questionId,
-        examId : params.id
+        examId: params.id,
       });
       dispatch(HideLoading());
       if (response.success) {
